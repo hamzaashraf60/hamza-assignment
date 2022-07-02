@@ -11,7 +11,7 @@
                         <h1 class="text-center pt-5">Facebook</h1>
                         <ul>
                             <li><p class="pt-3 text-center">For More Information Visit Our Facebook Page</p></li>
-                            <li class="d-flex justify-content-center"><a href="https://www.facebook.com/hamiimughal786/"><button class="btn btn-outline-primary btn-lg social-btn1" type="button">Facebook</button></a></li>
+                            <li class="d-flex justify-content-center"><a href="#"><button class="btn btn-outline-primary btn-lg social-btn1" type="button">Facebook</button></a></li>
                         </ul>
                         
                         
@@ -20,7 +20,7 @@
                         <h2 class="text-center pt-5">Mail</h2>
                         <ul>
                             <li><p class="pt-5 text-center">For Queries And Reviews Mail Us On</p></li>
-                            <li  class="d-flex justify-content-center"><a href="mailto:18101001-072@uskt.edu.pk"><button class="btn btn-outline-primary btn-lg social-btn2" type="button">Mail Us</button></a></li>
+                            <li  class="d-flex justify-content-center"><a href="#"><button class="btn btn-outline-primary btn-lg social-btn2" type="button">Mail Us</button></a></li>
                         </ul>
                         
                     
@@ -29,15 +29,33 @@
                         <h2 class="text-center pt-5">Mail</h2>
                         <ul>
                             <li><p class="pt-5 text-center">For Direct Info Call Us On Our Number</p></li>
-                            <li  class="d-flex justify-content-center"><a href="tel:923328432678"><button class="btn btn-outline-primary btn-lg social-btn2" type="button">Contact No</button></a></li>
+                            <li  class="d-flex justify-content-center"><a href="#"><button class="btn btn-outline-primary btn-lg social-btn2" type="button">Contact No</button></a></li>
                         </ul>
-                        
-                    
                     </div>
                 </div>
 
             </div>
         </section>
+    </section>
+    <section>
+        <form action="form" method="get">
+            First Name : <input type="text" id="first" name="fname"><br><br>
+            Last Name : <input type="text" id="last" name="lname"><br><br>
+            E-mail : <input type="email" id="mail" name="email"><br><br>
+            Phone no : <input type="number" id="no" name="phoneno"><br><br>
+            Gender : <input type="radio" name="gender" value="Male" id="gen">
+            <label for="html">Male</label>
+            <input type="radio" name="gender" value="Female" id="gen">
+            <label for="html">Female</label><br><br>
+            <label for="dep">Customer Department :</label>
+            <select name="dep" id="dep">
+                <option value="sale">Sales</option>
+                <option value="it">IT</option>
+            </select><br><br>
+            Message : <textarea name="textbox" id="textbox" cols="30" rows="10"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <p>@ViewBag.message</p>
     </section>
 
 
