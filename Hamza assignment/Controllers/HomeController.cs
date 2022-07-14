@@ -1,31 +1,35 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Hamza_assignment.Data;
+using Hamza_assignment.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Hamza_assignment.Controllers
 {
-    public class HomeController : Controller
+    public class homeController : Controller
     {
+
+        private readonly DataContext _context;
+        private DataContext _write;
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult contact()
+        public homeController(DataContext context)
         {
-            ViewBag.message = "READY";
-            return View();
+            _context = context;
+            _write = context;
         }
 
-        public IActionResult form(string fname, string lname, string email, double phone, string gender, string dep)
+        public IActionResult contact()
         {
-            if (fname != "" && lname != "" && email != "" && phone != null && gender != "" && dep != "")
-            {
-                ViewBag.message = "RECEIVED";
-            }
-            else
-            {
-                ViewBag.message = "Failed";
-            }
-            return View("contact");
+            return View(_context.messa.ToList());
+        }
+
+        public IActionResult form(customerMessage s)
+        {
+            _write.messa.Add(s);
+            _write.SaveChanges();
+            return View("Index");
         }
     }
 }
